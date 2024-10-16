@@ -15,7 +15,8 @@ Note that constant2Vector has (R,G) and constant3Vector has (R,G,B) but these ca
 For example, if plugging into color socket RGB = Red, Green, and Blue Channels, but if plugging into a position socket, RGB will refer to XYZ, respectively.
 
 ----------------
-"BaseColor" is looking for a constant3Vector for Red, Green, and Blue Channels.
+BaseColor
+* "BaseColor" is looking for a constant3Vector for Red, Green, and Blue Channels.
 
 Keyboard Shortcut:
 * If you hold 1,2,3, or 4 keys then left click in the Material Graph, you can quickly create one of the respective "Constant" types. For example, 3+left-click creates a Constant3Vector
@@ -27,3 +28,15 @@ Note:
 * There seems to be a bug where changing the value of the color inside a Constant node doesn't change the color of the preview until you manually enter some value for any of the R,G,B parameters in the node.
 
 =============================================================
+Roughness
+
+* This is a socket in the Material
+* Requires a Constant1Vector (Constant, single float)
+* Controls how "Reflective" a surface will be
+  * A value of 1 = The surface will become completely "rough"
+  * A value of 0 = The surface will become completely "reflective"
+  * A value outside of 0 and 1 will have no effect (clamped to 0..1)
+
+=============================================================
+
+
