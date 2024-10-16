@@ -38,5 +38,33 @@ Roughness
   * A value outside of 0 and 1 will have no effect (clamped to 0..1)
 
 =============================================================
+Lerp
 
+HotKey: L + LeftClick
+
+3 Sockets in the Lerp Node:
+* A, B, Alpha
+* Alpha is the percentage from value A to value B
+* If Alpha is 0, then A is used
+* If Alpha is 1, then B is used
+* If Alpha is 0.5, then a value halfway is used (0.5)
+
+Noise Texture
+* Has random AREAS between 0 and 1 all over
+* Unreal Engine has a built in Noise Texture in the Starter Pack
+* T_Perlin_Noise_M
+
+Texture Sample / External Textures
+* Any time you want to use an external texture in the graph, you must "Sample" it first.
+* Right-click -> Texture -> TextureSample
+* A TextureSample uses and outputs the color values from a texture 
+* With the TextureSample node selected, on the left, under Details, select:
+  * Material Expression Texture Base -> Texture
+* Here, we can select the T_Perlin_Noise_M texture
+
+If you open the perlin noise texture, and turn on and off each RGB value, you can see that they are all the same.
+So, it doesn't matter if we use R or G or B.
+We just need a single value to connect to the Alpha in the Lerp node.
+
+=============================================================
 
