@@ -3,4 +3,27 @@
 Material Notes
 
 https://www.udemy.com/course/unreal-engin5-one-course-solution-for-material/
--------------------------------
+=============================================================
+Material Graph Data Types
+
+3 Basic Types (there are more than these):
+* Constant / 1 float 
+* Constant2Vector / 2 floats
+* Constant3Vector / 3 floats
+
+Note that constant2Vector has (R,G) and constant3Vector has (R,G,B) but these can be anything.
+For example, if plugging into color socket RGB = Red, Green, and Blue Channels, but if plugging into a position socket, RGB will refer to XYZ, respectively.
+
+----------------
+"BaseColor" is looking for a constant3Vector for Red, Green, and Blue Channels.
+
+Keyboard Shortcut:
+* If you hold 1,2,3, or 4 keys then left click in the Material Graph, you can quickly create one of the respective "Constant" types. For example, 3+left-click creates a Constant3Vector
+
+Be sure to click the APPLY button in the upper left corner to affect the material.
+"SAVE" also seems to apply the color.
+
+Note:
+* There seems to be a bug where changing the value of the color inside a Constant node doesn't change the color of the preview until you manually enter some value for any of the R,G,B parameters in the node.
+
+=============================================================
