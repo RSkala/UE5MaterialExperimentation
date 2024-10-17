@@ -57,6 +57,7 @@ Noise Texture
 Texture Sample / External Textures
 * Any time you want to use an external texture in the graph, you must "Sample" it first.
 * Right-click -> Texture -> TextureSample
+  * Hotkey: T+Leftclick
 * A TextureSample uses and outputs the color values from a texture 
 * With the TextureSample node selected, on the left, under Details, select:
   * Material Expression Texture Base -> Texture
@@ -65,6 +66,27 @@ Texture Sample / External Textures
 If you open the perlin noise texture, and turn on and off each RGB value, you can see that they are all the same.
 So, it doesn't matter if we use R or G or B.
 We just need a single value to connect to the Alpha in the Lerp node.
+
+=============================================================
+UV
+
+What is UV?
+* "U" and "V" denote the axes of the 2D texture (horizontal and vertical, respectively)
+
+UV Mapping:
+* Projecting a 2D image onto a 3D mode's surface
+
+Texture Coordinate (TexCoord)
+* To do something with the UVs's inside the Material Graph, you need the TextureCoordinate node
+* Right-click -> Coordinates -> TextureCoordinate 
+* We plug the TexCoord node into the UVs pin on the TextureSample node
+* This node controls the UV tiling
+  * UTiling
+  * VTiling
+* The higher these values, the pattern repeats MORE and get SMALLER
+* The lower these values, the pattern repeats LESS and get LARGER.
+* Use the Multiply node to more conveniently change both of the values
+  * This multiplies BOTH UV Tiling values by the value in a connected Constant1 node
 
 =============================================================
 
