@@ -87,6 +87,23 @@ Texture Coordinate (TexCoord)
 * The lower these values, the pattern repeats LESS and get LARGER.
 * Use the Multiply node to more conveniently change both of the values
   * This multiplies BOTH UV Tiling values by the value in a connected Constant1 node
+  * Hotkey: M+Left-click
+
+=============================================================
+Component Mask
+
+* Right-click -> Math -> ComponentMask (Mask)
+* We will use this to tile individual axis, have control and U and V individually
+* Note that it displays (R, G), but these are just simply values
+  * Can also add or remove, e.g. (R,G,B,A) or just (R) or just (G)
+* If you connect a TexCoord to Mask the (R,G) will actually be the (U,V)
+
+AppendVector (Append):
+* You need this node in order to combine the two separate U,V values into the UVs pin on a TextureSample node
+
+MakeFloat2:
+* You can also use this node in order to combine two values and plug into the UV's on a TextureSample node
+
 
 =============================================================
 
