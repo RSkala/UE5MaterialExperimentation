@@ -155,6 +155,15 @@ TODO:
 NOTE:
 * We can also use the Additive blend mode to achieve the same effect maybe
 
+------------
+Panner
+* You can use the Panner node to do basically the same thing as above.
+* The above method is what RoyalSkies uses. He doesn't use the Panner (forgot why)
+
+Panner
+* Coordinate: So you can plug in a texture's UV coordinates (for tiling for example)
+* Time: Can use this to increase the time (most faster or slower, maybe for scale?)
+
 =============================================================
 
 
