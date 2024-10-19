@@ -106,4 +106,55 @@ MakeFloat2:
 
 
 =============================================================
+Moving Texture
+
+Opacity:
+* By default, this pin is not selectable
+* Details -> Material -> Blend Mode
+  * Change from Opaque to Translucent
+* Note: The Opacity socket is looking for a mask, so if you connect just the R for example, it will cut out the arrow.
+
+In the T_Arrow texture, you can connect the R channel to Opacity and it will cut out the rest.
+Why? 
+* If you open the texture, and isolate the RGB channels, you can see that the R G and B values are all "1" (white), where the arrow is. So, ANY of these (R G or B) connected to the Opacity pin will "cut out" the arrow
+* That is, it only shows the values are the 1 (white stuff), and not showing the values that are 0 (black stuff).
+
+----------
+Making a Texture "Move"
+* Need to manipulate the UV
+Need:
+* Speed
+* Time
+* Distance = Speed * Time (D = RT)
+
+Time:  Use the Time node
+  * Anytime you want to animate something in the Material Graph, you use the Time node
+Speed: Use a Constant1 Vector (i.e. a single float)
+
+Multiply Node:
+* Time
+* Speed
+
+Add Node:
+* TexCoord
+* Multiply
+
+Notice that when using a POSITIVE value, the texture moves BACKWARDS
+Use a NEGATIVE value to move the texture FORWARDS
+* This is due to what the "U" and "V" values mean. That is, it is moving the location. TODO
+* One of the featured questions explains this
+
+REMINDER:
+* Use the ComponentMask (Mask) node to ISOLATE the U or V. (R or G in the Mask node)
+* We need to Mask BOTH the U and V, BUT ONLY the U will be in the ADD node to move
+* Use the AppendVector (Append) node to combine them back into UV coords
+
+TODO:
+* Why does passing in the U only cause a weird straight line?
+
+NOTE:
+* We can also use the Additive blend mode to achieve the same effect maybe
+
+=============================================================
+
 
